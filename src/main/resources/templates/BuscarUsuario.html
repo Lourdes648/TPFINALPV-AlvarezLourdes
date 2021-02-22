@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<link th:href="@{../css/style.css}" rel="stylesheet" type="text/css" href="../static/css/style.css">
+	<link th:href="@{../css/bootstrap.css}" rel="stylesheet" type="text/css" href="../static/css/bootstrap.css">
+	<meta charset=UTF-8>
+	<title>BuscarUsuario</title>
+</head>
+<body class="text-center">
+	<div class="form-group">
+		<form action="Admin" class="form-group">
+				<input type="submit" class="btn btn-lg btn-primary btn-block" value="Volver">
+		</form>
+		<form th:object="${user}" th:action="${buscarUsuario}" method="post"class="form-group" id="formBuscarUsuario"  >
+			<label for="buscarUsuario">Escriba el Usuario que desea Buscar</label>
+			<input id="buscarUsuario" type="text" th:field="${user.cad}"  class="form-control">
+			<label for="enviar"></label><input id="enviar" type="submit" class="btn btn-lg btn-primary btn-block" value="Buscar">
+		</form>
+	</div>
+</body>
+</html>

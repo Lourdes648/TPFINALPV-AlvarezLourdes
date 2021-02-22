@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<link th:href="@{../css/style.css}" rel="stylesheet" type="text/css" href="../static/css/style.css">
+	<link th:href="@{../css/bootstrap.css}" rel="stylesheet" type="text/css" href="../static/css/bootstrap.css">
+	<meta charset=UTF-8>
+	<title>BuscarFecha</title>
+</head>
+<body class="text-center">
+	<div class="form-group">
+		<form action="Admin" class="container">
+				<input type="submit" class="btn btn-lg btn-primary btn-block" value="Volver">
+		</form>
+		<form th:object="${fecha}" th:action="${buscarFecha}" method="post" class="form-group" id="formBuscarUsuario"  >
+			<label for="diaFecha">Dia</label>
+			<input id="diaFecha" type="number" th:field="${fecha.d}"  class="form-control">
+			<label for="mesFecha">Mes</label>
+			<input id="mesFecha" type="number" th:field="${fecha.m}"  class="form-control">
+			<label for="añoFecha">Año</label>
+			<input id="añoFecha" type="number" th:field="${fecha.a}"  class="form-control">
+			<label></label><input type="submit" class="btn btn-lg btn-primary btn-block" value="Buscar">
+		</form>
+	</div>
+</body>
+</html>

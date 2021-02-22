@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<link th:href="@{../css/style.css}" rel="stylesheet" type="text/css" href="../static/css/style.css">
+	<link th:href="@{../css/bootstrap.css}" rel="stylesheet" type="text/css" href="../static/css/bootstrap.css">
+	<meta charset=UTF-8>
+	<title>Administrador</title>
+</head>
+<body class="text-center">
+	<div class="form-group">
+		<form action="MostrarReservas" class="form-group">
+			<input type="submit" class="btn btn-lg btn-primary btn-block" value="Mostrar Reservas (Habitaciones)">
+		</form>
+		<form action="BuscarUsuario" class="form-group" id="formBuscarUsuario">
+			<input type="submit" class="btn btn-lg btn-primary btn-block" value="Mostrar Reservas (Habitaciones) por Usuario">
+		</form>
+		<form action="BuscarFecha" class="form-group" id="formBuscarFecha">
+			<input type="submit" class="btn btn-lg btn-primary btn-block" value="Mostrar Reservas (Habitaciones) por Fecha">
+		</form>
+		<form action="AgregarHabitacion" class="form-group" id="formBuscarFecha">
+			<input type="submit" class="btn btn-lg btn-primary btn-block" value="Agregar Habitacion">
+		</form>
+		<form action="AgregarUsuario" class="form-group" id="formBuscarFecha">
+			<input type="submit" class="btn btn-lg btn-primary btn-block" value="Agregar Usuario">
+		</form>
+		<form action="login" class="form-group" id="formCerrarSesion">
+			<input type="submit" class="btn btn-lg btn-primary btn-block" value="Cerrar Sesion">
+		</form>
+	</div>
+</body>
+</html>

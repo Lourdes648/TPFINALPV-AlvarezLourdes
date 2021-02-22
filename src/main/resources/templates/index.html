@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<link th:href="@{../css/style.css}" rel="stylesheet" type="text/css" href="../static/css/style.css">
+	<link th:href="@{../css/bootstrap.css}" rel="stylesheet" type="text/css" href="../static/css/bootstrap.css">
+	<meta charset=UTF-8>
+	<title>Login</title>
+</head>
+<body class="text-center">
+    <form class="form-signin" th:object="${usuarioDelForm}" th:action="@{/login}" method="post">
+      <h1 class="h3 mb-3 font-weight-normal">Inicio de Sesion</h1>
+      <label for="user" class="sr-only">Usuario</label>
+      <input type="text" name="nombreUsuario" id="user" class="form-control"placeholder="Usuario">
+      <label for="pass" class="sr-only">Contraseña</label>
+      <input type="password" id="pass" name="contraseña" class="form-control"placeholder="Contraseña">
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Iniciar Sesion</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<link th:href="@{../css/style.css}" rel="stylesheet" type="text/css" href="../static/css/style.css">
+	<link th:href="@{../css/bootstrap.css}" rel="stylesheet" type="text/css" href="../static/css/bootstrap.css">
+	<meta charset=UTF-8>
+	<title>Reserva habitacion</title>
+</head>
+<body class="text-center">
+    <div class="container" >
+    	<form action="Client" class="form-group">
+				<input type="submit" class="btn btn-lg btn-primary btn-block" value="Volver">
+		</form>
+    	<table class="table table-bordered">
+			<tr>
+				<th>Numero</th>
+				<th>Tipo</th>
+				<th>Descripcion</th>
+				<th>Usuario que reserva</th>
+				<th>Monto pagado</th>
+				<th>Fecha de Reserva</th>
+			</tr>
+			<tr th:each="reserva : ${reservas1}">
+				<td th:text="${reserva.id}"></td>
+				<td th:text="${reserva.tipo}"></td>
+				<td th:text="${reserva.descripcion}"></td>
+				<td th:text="${reserva.user}"></td>
+				<td th:text="${reserva.precioNombre}"></td>
+				<td th:text="${reserva.fecha}"></td>
+			</tr>
+		</table>
+    	<form id="formReserva" th:object="${reservaDelForm}" th:action="${reservarHabitacion}" method="post">
+			<div class="form-group" >
+			  	<label for="codigoReserva">Escriba el Numero de habitacion elegida</label>
+			  	<input type="text" class="form-control" id="codigoReserva" placeholder="Habitaciones sin Usuarios registrados estan disponibles" th:field="*{codigoReserva}"></input>
+			</div>
+			<div class="form-group">
+			  	<label for="usuarioReserva">Escriba su nombre de Usuario</label>
+			  	<input type="text" class="form-control" id="usuarioReserva" placeholder="Escriba el usuario aqui" th:field="*{usuarioReserva}"></input>
+			</div>
+			<div class="form-group">
+			  	<label for="usuarioReserva">Desea la reserva con desayuno? Si/No</label>
+			  	<input type="text" class="form-control" id="desayuno" placeholder="Escriba su respuesta (Si/No)" th:field="*{desayuno}"></input>
+			</div>
+			<div class="form-group">
+			  	<label for="monto">Ingresa el monto a pagar</label>
+			  	<input type="number" class="form-control" id="monto" placeholder="Monto a abonar" th:field="*{monto}"></input>
+			</div>
+		  	<p class="container">Fecha de Reserva(Dia, Mes y Año)</p>
+			<div>
+				<input type="number" id="dia" placeholder="Dia" th:field="*{d}"></input>
+				<input type="number" id="mes" placeholder="Mes" th:field="*{m}"></input>
+				<input type="number" id="año" placeholder="Año" th:field="*{a}"></input>
+			</div>
+			<div class="form-group"></div>
+			<div>
+				<button type="submit" class="btn btn-lg btn-primary btn-block" value="Reservar">Reservar</button>
+			</div>
+		</form>
+    </div>
+</body>
+</html>		
